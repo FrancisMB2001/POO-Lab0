@@ -1,3 +1,5 @@
+package Lab0;
+
 public enum Size {
     SMALL(32, 36, "Pequeno", 'S'),
     MEDIUM(37, 44, "Médio", 'M'),
@@ -13,6 +15,15 @@ public enum Size {
         this.minValue = minValue;
         this.maxValue = maxValue;
         this.code = code;
+    }
+
+    public String returnType() {
+        return switch (code) {
+            case 'S' -> "SMALL";
+            case 'M' -> "MEDIUM";
+            case 'L' -> "LARGE";
+            default -> "";
+        };
     }
 
     @Override
